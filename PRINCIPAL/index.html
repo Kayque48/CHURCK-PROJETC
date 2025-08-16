@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -8,14 +9,18 @@
 </head>
 <body>
 
-    <div class="menu">
+    <div class="cabecalho">
         <h3 id="igreja">Igrela Santo Antonio</h3>
-        <h3>Igreja</h3>
-        <h3>Ao Vivo</h3>
-        <h3>Doação</h3>
-        <h3>Onde Nós encontrar</h3>
-
-        <div class="cad/log">
+        <a href="">
+            <h3>Ao Vivo</h3>
+        </a>
+        <a href="">
+         <h3>Doação</h3>
+        </a>
+         <a href="">
+            <h3>Onde Nós Encontrar</h3>
+        </a> 
+        <div class="cad-log">
             <a href="/CADASTRO-LOGIN/cad.html">
                 <h4 id="cad">Cadastrar</h4>
             </a>
@@ -25,20 +30,26 @@
         </div>
     </div>
     
-    <div class="inicio">
+    <div class="principal">
+        <div class="overlay"></div>
         <h1>Bem vindo a Igreja Santo Antonio</h1>
-        <h2>Aqui temos as mais diversas atividade que vão aproximar você de deus</h2>
-    </div>
-    
-    <div class="lives">
-        <h3>Com você em todos os lugares</h3>
-        <button>Assistir live</button>
+        <h2>Descubra atividades que vão aproximar você de Deus e iluminar seu caminho.</h2>
     </div>
 
-    <div>
-        <h2>Doações</h2>
-        <p>Cada semente plantada transforma vidas — seja parte do que Deus está fazendo aqui.</p>
-        <button>Contribuir</button>
+    <div class="container-geral">
+        <div class="lives">
+            <div class="overlay"></div>
+            <h2 id="live">Lives</h2>
+            <p>Com você em todos os lugares</p>
+            <button>Assistir live</button>
+        </div>
+
+        <div class="doacao">
+            <div class="overlay"></div>
+            <h2 id="doacao">Doações</h2>
+            <p>Cada semente plantada transforma vidas — seja parte do que Deus está fazendo aqui.</p>
+            <button>Contribuir</button>
+        </div>
     </div>
 
     <div class="atividade">
@@ -84,23 +95,23 @@
                     <li>Vigília de oração (à noite)</li>
                     <li>Eventos especiais (palestras, conferências)</li>
                 </ul>
-                <div class="sab">
-                    <h2>Sábados</h2>
-                    <ul>
-                        <li>Ensaio do grupo de louvor</li>
-                        <li>Gincanas ou eventos sociais da igreja</li>
-                        <li>Evangelismo em praças ou bairros</li>
-                        <li>Culto da família (em algumas igrejas)</li>
-                    </ul>
-                </div>
-                <div class="Dom">
-                    <h2>Domingos</h2>
-                    <ul>
-                        <li>Escola Bíblica Dominical (manhã)</li>
-                        <li>Culto principal (manhã e/ou noite)</li>
-                        <li>Reunião ministerial para planejamento</li>
-                    </ul>
-                </div>
+            </div>
+            <div class="sab">
+                <h2>Sábados</h2>
+                <ul>
+                    <li>Ensaio do grupo de louvor</li>
+                    <li>Gincanas ou eventos sociais da igreja</li>
+                    <li>Evangelismo em praças ou bairros</li>
+                    <li>Culto da família (em algumas igrejas)</li>
+                </ul>
+            </div>
+            <div class="Dom">
+                <h2>Domingos</h2>
+                <ul>
+                    <li>Escola Bíblica Dominical (manhã)</li>
+                    <li>Culto principal (manhã e/ou noite)</li>
+                    <li>Reunião ministerial para planejamento</li>
+                </ul>
             </div>
         </div>
 
