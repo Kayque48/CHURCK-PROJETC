@@ -21,12 +21,16 @@
 }
 
 /* empurra os demais itens para a direita */
-.cabecalho > #igreja {
+.nome a{
   margin-right: auto;
   font-size: 50px;
   color: rgba(252, 252, 2, 0.76);
   font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
+}
+
+.cabecalho > a, .cad-log {
+  margin-left: auto; /* empurra todos os links e cad-log para a direita */
 }
 
 /* tira margens padrão das headings */
@@ -60,7 +64,7 @@
   height: 100vh; /* ocupa a altura inteira da tela */
   
   /* imagem de fundo */
-  background-image: url("/PRINCIPAL/IMG/principal.jpg");
+  background-image: url("/IMG/principal.jpg");
   background-size: cover;      /* cobre toda a div sem distorcer */
   background-position: center; /* centraliza a imagem */
   background-repeat: no-repeat;
@@ -159,7 +163,7 @@
     align-items: center;
     
     /* fundo com imagem */
-    background-image: url("/PRINCIPAL/IMG/live.jpg"); /* caminho da imagem */
+    background-image: url("/IMG/live.jpg"); /* caminho da imagem */
     background-size: cover;      /* cobre todo o container */
     background-position: center; /* centraliza a imagem */
     background-repeat: no-repeat;
@@ -197,7 +201,7 @@
     align-items: center;
     
     /* fundo com imagem */
-    background-image: url("/PRINCIPAL/IMG/doação.jpg");
+    background-image: url("/IMG/doação.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

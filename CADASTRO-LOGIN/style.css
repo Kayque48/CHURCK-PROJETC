@@ -1,0 +1,146 @@
+/* CABEÇALHO */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: nowrap;
+  background: linear-gradient(90deg, #000000, #1f1f1f, #727272); 
+  font-size: 20px;
+  padding: 20px 30px;
+  width: 100%;
+  font-family: Arial, sans-serif; /* fonte padrão do cabeçalho */
+}
+
+/* Nome da igreja */
+.nome a h3 {
+  font-family: "Dancing Script", cursive;
+  font-size: 50px;
+  color: rgba(252, 252, 2, 0.76);
+  margin: 0;
+}
+
+/* Empurra os links restantes e cad-log para a direita */
+.cabecalho > a, .cad-log {
+  margin-left: auto;
+}
+
+/* Links limpinhos */
+.cabecalho a {
+  text-decoration: none;
+  color: white;
+}
+
+.cabecalho a:hover {
+  color: rgba(252, 252, 2, 0.76);
+}
+
+/* Cad/log já estilizado */
+.cad-log {
+  display: flex;
+  gap: 50px;
+}
+
+.cad-log a {
+  text-decoration: none;
+  color: white;
+}
+
+.cad-log a:hover {
+  color: rgba(252, 252, 2, 0.76);
+}
+
+body{
+    width: 100%;
+    height: 100vh; /* ocupa a altura inteira da tela */
+
+    /* imagem de fundo */
+    background-image: url("/IMG/principal.jpg");
+    background-size: cover;      /* cobre toda a div sem distorcer */
+    background-position: center; /* centraliza a imagem */
+    background-repeat: no-repeat;
+
+    flex-direction: column;
+    justify-content: center;  /* centraliza verticalmente o texto */
+    align-items: center;      /* centraliza horizontalmente */
+
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    color: black;       /* deixa o texto branco sobre a imagem */
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.titulo-cad {
+  text-align: center;      /* centraliza horizontalmente */
+  margin-top: 40px;        /* espaço entre cabeçalho e título */
+  margin-bottom: 20px;     /* espaço entre título e form */
+  color: rgb(0, 0, 0);            /* cor do texto */
+  font-family: 'Dancing Script', cursive; /* combina com cabeçalho */
+}
+
+.titulo-cad h1 {
+  margin: 10px 0;          /* espaçamento entre os dois h1 */
+  font-size: 36px;         /* tamanho do texto */
+  color: rgba(252, 252, 2, 0.76);
+}
+
+.form {
+  border: 2px solid white;
+  border-radius: 20px;
+  width: 400px;          /* tamanho fixo ou relativo */
+  padding: 20px;
+  text-align: center;
+  background: rgba(0,0,0,0.7); /* opcional */
+  
+  /* centralização */
+  margin: 50px auto 0 auto; /* topo 50px, horizontal automático, sem margem inferior */
+}
+
+.form label {
+  display: block;           /* cada label em linha separada */
+  margin-top: 15px;         /* espaço acima do label */
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+}
+
+.form input {
+  width: 100%;              /* ocupa toda a largura do form */
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form input:focus {
+  border-color: #fcfc02;    /* muda a borda ao focar */
+  outline: none;            /* remove contorno padrão */
+  box-shadow: 0 0 5px #fcfc02;
+}
+
+.form button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fcfc02;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background-color: #e5e500;
+}
+
+.down a{
+    text-decoration: none;
+    color: white;
+}
+
+.down :hover{
+    color: rgba(252, 252, 2, 0.76);
+}

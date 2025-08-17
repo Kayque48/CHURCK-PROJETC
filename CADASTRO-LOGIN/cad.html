@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Projeto Igreja(Cadastro)</title>
 </head>
 <body>
+
+     <div class="cabecalho">
+        <div class="nome">
+            <a href="/PRINCIPAL/index.html">
+                <h3 id="igreja">Igrela Santo Antônio</h3>
+            </a>
+        </div>
+       <a href="/DESENVOLVIMENTO/desenvolvimento.html">
+            <h3>Ao Vivo</h3>
+        </a>
+        <a href="/DESENVOLVIMENTO/desenvolvimento.html">
+         <h3>Doação</h3>
+        </a>
+         <a href="/DESENVOLVIMENTO/desenvolvimento.html">
+            <h3>Onde Nós Encontrar</h3>
+        </a> 
+        <div class="cad-log">
+            <a href="/CADASTRO-LOGIN/cad.html">
+                <h4 id="cad">Cadastrar</h4>
+            </a>
+            <a href="/CADASTRO-LOGIN/log.html">
+                <h4 id="log">Entrar</h4>
+            </a>
+        </div>
+    </div>
     
     <div class="titulo-cad">
         <h1>Primeiro acesso?</h1>
@@ -13,24 +40,29 @@
     </div>
 
     <div class="form">
-        <label for="name-cad">Nome: </label>
-        <input type="text" id="name-cad">
+        <label for="name-cad">Nome:</label>
+        <input type="text" id="name-cad" placeholder="Digite seu nome">
+
         <label for="email-cad">Email:</label>
-        <input type="Email" id="email-cad">
+        <input type="email" id="email-cad" placeholder="Digite seu email">
+
         <label for="phone-cad">Telefone:</label>
-        <input type="text" id="telefone">
+        <input type="text" id="telefone" placeholder="Digite seu telefone">
+
         <label for="password">Definir senha:</label>
-        <input type="password-cad" id="password">
+        <input type="password" id="password" placeholder="Crie uma senha">
+
         <label for="confirword">Confirmar senha:</label>
-        <input type="password" id="password-cad">
+        <input type="password" id="password-cad" placeholder="Repita sua senha">
 
         <div class="down">
-            <p>Já é cadastrado? Acessar login</p>
-
+            <a href="/CADASTRO-LOGIN/log.html">
+                <p>Já é cadastrado? Clique aqui</p>
+            </a>
             <button id="cadastro">Cadastrar</button>
         </div>
-
     </div>
+
 
 </body>
 </html>

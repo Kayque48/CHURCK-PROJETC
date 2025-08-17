@@ -1,30 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Igreja(Login)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Projeto Igreja(Login)</title>
 </head>
 <body>
-    
-    <div class="titulo-cad">
-        <h1>Acessar Sua Conta</h1>
-    </div>
 
-    <div class="form">
-        <label for="email-login">Email:</label>
-        <input type="Email" id="email-login">
-        <label for="confirword-login">Confirmar senha:</label>
-        <input type="password" id="confirword-login">
-
-        <div class="down">
-            <p>Esqueceu sua senha> Redefina-a</p>
-            <p>Primeiro acesso? Realize o cadastro</p>
-
-            <button id="login">Entrar</button>
+  <div class="cabecalho">
+        <div class="nome">
+            <a href="/PRINCIPAL/index.html">
+                <h3 id="igreja">Igrela Santo Antônio</h3>
+            </a>
         </div>
-
+        <a href="">
+            <h3>Ao Vivo</h3>
+        </a>
+        <a href="">
+         <h3>Doação</h3>
+        </a>
+         <a href="">
+            <h3>Onde Nós Encontrar</h3>
+        </a> 
+        <div class="cad-log">
+            <a href="/CADASTRO-LOGIN/cad.html">
+                <h4 id="cad">Cadastrar</h4>
+            </a>
+            <a href="/CADASTRO-LOGIN/log.html">
+                <h4 id="log">Entrar</h4>
+            </a>
+        </div>
     </div>
+
+  <div class="titulo-cad">
+    <h1>Acessar Sua Conta</h1>
+  </div>
+
+  <div class="form">
+    <label for="email-login">Email:</label>
+    <input type="email" id="email-login" placeholder="Digite seu email">
+
+    <label for="password-login">Senha:</label>
+    <input type="password" id="password-login" placeholder="Digite sua senha">
+
+    <div class="down">
+      <p><a href="/DESENVOLVIMENTO/desenvolvimento.html">Esqueceu sua senha? Redefina-a</a></p>
+      <p><a href="cad.html">Primeiro acesso? Realize o cadastro</a></p>
+
+      <button id="login">Entrar</button>
+    </div>
+  </div>
 
 </body>
 </html>
