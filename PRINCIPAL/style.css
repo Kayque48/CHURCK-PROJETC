@@ -1,62 +1,119 @@
+/* Reset geral */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* CABEÇALHO */
 .cabecalho {
-  display: flex;          /* põe tudo na mesma linha */
-  align-items: center;    /* alinha verticalmente */
-  gap: 100px;              /* espacinho entre os itens */
-  flex-wrap: nowrap;      /* evita quebrar linha */
-  background: linear-gradient(90deg, #000000, #1f1f1f, #727272); 
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* já separa nome à esquerda e menus à direita */
+  background: linear-gradient(90deg, #000000, #1f1f1f, #727272);
   font-size: 20px;
   padding: 20px 30px;
   width: 100%;
-
 }
 
-.cabecalho a{
-    text-decoration: none;
-    color: white;
+.cabecalho a {
+  text-decoration: none;
+  color: white;
 }
 
-.cabecalho :hover{
-    color: rgba(252, 252, 2, 0.76);
+.cabecalho a:hover {
+  color: rgba(252, 252, 2, 0.76);
 }
 
-/* empurra os demais itens para a direita */
-.nome a{
-  margin-right: auto;
+.nome a {
   font-size: 50px;
   color: rgba(252, 252, 2, 0.76);
   font-family: "Dancing Script", cursive;
-  font-optical-sizing: auto;
 }
 
-.cabecalho > a, .cad-log {
-  margin-left: auto; /* empurra todos os links e cad-log para a direita */
-}
-
-/* tira margens padrão das headings */
-.cabecalho h3,
-.cabecalho h4 {
-  margin: 0;
-  font-weight: 500;
+/* organiza os links da direita */
+.menu-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
 }
 
 .cad-log {
-  display: flex;   /* cadastro/login na horizontal também */
-  gap: 16px;
-  transition: background-color 1s ease;
-  margin-left: 20px;
-  gap:50px;
+  display: flex;
+  gap: 20px;
 }
 
-
-.cad-log :hover{
-    color: rgba(252, 252, 2, 0.76);
+/* PRINCIPAL */
+.principal {
+  position: relative; /* necessário pro overlay */
+  width: 100%;
+  height: 100vh;
+  background-image: url("/IMG/principal.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
 }
 
-/* links limpinhos */
-.cad-log a {
-  text-decoration: none;
+.principal .overlay {
+  position: absolute;
+  inset: 0; /* cobre toda a div */
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.principal h1,
+.principal h2 {
+  position: relative;
+  z-index: 2;
   color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.principal h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: rgba(252, 252, 2, 0.76);
+}
+
+/* LIVES e DOAÇÃO */
+.lives, .doacao {
+  position: relative; /* necessário pro ::before */
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; /* garante que overlay não escape */
+}
+
+.lives::before,
+.doacao::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.lives h2, .doacao h2,
+.lives p, .doacao p,
+.lives button, .doacao button {
+  position: relative;
+  z-index: 2;
 }
 
 .principal {
@@ -111,181 +168,172 @@
   max-width: 800px; /* limita largura do subtítulo */
 }
 
+/* Container geral dos dois cards */
 .container-geral {
-    display: flex;          /* coloca tudo em linha */
-    gap: 20px;              /* espaço entre os containers */
-    flex-wrap: wrap;        /* se não couber, vai para a próxima linha */
-    padding: 20px;
-    border-top: 5px solid rgba(252, 252, 2, 0.76);
+  display: flex;
+  gap: 40px;              /* mais espaço entre eles */
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px;
+  border-top: 5px solid rgba(252, 252, 2, 0.76);
 }
 
-.lives, .doacao{
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    flex: 1;                /* todos ocupam espaço proporcional */
-    min-width: 250px;       /* evita que fiquem muito estreitos */
-    background-color: #000000;
-    color: black;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* sombra suave */
-    transition: transform 0.3s, box-shadow 0.3s;
+/* Lives e Doação */
+.lives, .doacao {
+  position: relative;
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;       /* não deixa crescer demais */
+  padding: 30px;
+  border-radius: 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;       /* impede overlay de vazar */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.lives:hover, .doacao:hover {
-    transform: translateY(-5px); /* levanta o card */
-    box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+/* Overlay para escurecer a imagem */
+.lives::before,
+.doacao::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 16px;
+  z-index: 1;
 }
 
+/* Conteúdo sempre acima da overlay */
+.lives h2, .doacao h2,
+.lives p, .doacao p,
 .lives button, .doacao button {
-    padding: 10px 20px;
-    background-color: orange;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
+  position: relative;
+  z-index: 2;
 }
 
-.lives h2, .doacao h2{
-    color: rgba(252, 252, 2, 0.76);
-    font-family: "Dancing Script", cursive;
-    font-optical-sizing: auto;
+/* Estilo hover */
+.lives:hover, .doacao:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.5);
 }
+
+/* Botões */
+.lives button, .doacao button {
+  padding: 10px 22px;
+  background-color: orange;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 12px;
+  transition: background-color 0.3s;
+}
+.lives button:hover, .doacao button:hover {
+  background-color: darkorange;
+}
+
+/* Títulos */
+.lives h2, .doacao h2 {
+  color: rgba(252, 252, 2, 0.9);
+  font-family: "Dancing Script", cursive;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
 
 .lives {
-    flex: 1;
-    min-width: 250px;
-    padding: 20px;
-    border-radius: 8px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    /* fundo com imagem */
-    background-image: url("/IMG/live.jpg"); /* caminho da imagem */
-    background-size: cover;      /* cobre todo o container */
-    background-position: center; /* centraliza a imagem */
-    background-repeat: no-repeat;
-    position: relative;
-}
-
-/* overlay opcional pra escurecer a imagem e deixar o texto legível */
-.lives::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4); /* escurece um pouco */
-    border-radius: 8px;
-    z-index: 1;
-}
-
-/* texto em cima da overlay */
-.lives h3, .lives button {
-    position: relative;
-    z-index: 2;
+  background-image: url("/IMG/live.jpg");
 }
 
 .doacao {
-    flex: 1;
-    min-width: 250px;
-    padding: 20px;
-    border-radius: 8px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    /* fundo com imagem */
-    background-image: url("/IMG/doação.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
+  background-image: url("/IMG/doação.jpg");
 }
 
-.doacao::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    border-radius: 8px;
-    z-index: 1;
-}
-
-.doacao h2, .doacao p, .doacao button {
-    position: relative;
-    z-index: 2;
-}
 
 /* opcional: título das atividades */
 
+/* Seção Atividades */
 .atividade {
-    border-top: 5px solid rgba(252, 252, 2, 0.76);
-
+  border-top: 5px solid rgba(252, 252, 2, 0.76);
+  padding: 50px 30px;
+  background-color: #f5f0e6; /* bege claro pra dar aconchego */
 }
 
 .atividade h3 {
-    margin-bottom: 15px;
-    color: black;
-    font-family: "Dancing Script", cursive;
-    font-optical-sizing: auto;
-    font-size: 50px;
-    text-align: center;
-    padding: 15px 30px;
+  margin-bottom: 30px;
+  color: black;
+  font-family: "Dancing Script", cursive;
+  font-size: 50px;
+  text-align: center;
 }
 
-/* cards das atividades ficam em linha dentro da div */
+/* Grid dos cards */
 .grup-card {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+  gap: 30px; /* mais espaço entre os cartões */
 }
 
+/* Cada card */
 .grup-card > div {
-    display: flex;
-    flex-direction: column;
-    background-color: #000; /* fundo preto */
-    padding: 15px;
-    border-radius: 12px;
-    box-sizing: border-box;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.4); /* sombra */
-    transition: transform 0.3s, box-shadow 0.3s;
-    color: white; /* texto branco */
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;   /* fundo branco */
+  color: #333;              /* texto mais escuro */
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Hover */
+.grup-card > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Título de cada card */
 .grup-card > div h2 {
-    background: linear-gradient(90deg, rgba(252, 252, 2, 0.76), rgba(255, 255, 150, 0.8));
-    text-align: center;
-    padding: 8px 0;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    font-size: 1.2em;
+  background: linear-gradient(90deg, #fcd34d, #fde68a); /* dourado suave */
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
+/* Lista dentro do card */
 .grup-card > div ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .grup-card > div ul li {
-    position: relative;
-    padding-left: 15px;
-    margin-bottom: 8px;
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 8px;
 }
 
-/* adiciona bolinha customizada */
+/* Bolinha customizada */
 .grup-card > div ul li::before {
-    content: "•";
-    color: rgba(252, 252, 2, 0.76);
-    position: absolute;
-    left: 0;
+  content: "•";
+  color: rgba(252, 252, 2, 0.9);
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+  line-height: 1;
 }
